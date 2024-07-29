@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 // 口座開設
 Route::post('/bankTrading/accountOpening', [AtmController::class, 'accountOpen']);
+// 残高紹介
+Route::get('/bankTrading/{id}', [AtmController::class, 'balanceReference']);
 
 // トークン生成
 Route::get('/createToken', [AtmController::class, 'createToken']);

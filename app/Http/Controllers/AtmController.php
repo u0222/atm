@@ -21,4 +21,12 @@ class AtmController extends Controller
   
         return $account;
     }
+
+    // 残高照会機能
+    public function balanceReference($accountId)
+    {
+        $account = BankAccount::find($accountId);
+  
+        return response()->json(['deposit_balance' => $account->deposit_balance]);
+    }
 }
